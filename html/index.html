@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lộ Trình Fullstack Java 6 Tháng</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+            padding:30px;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:30px;
+            color:#333;
+        }
+
+        .container{
+            max-width:1000px;
+            margin:auto;
+        }
+
+        .month{
+            background:white;
+            padding:20px;
+            margin-bottom:20px;
+            border-radius:10px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .month h2{
+            color:#0066cc;
+            margin-bottom:10px;
+        }
+
+        ul{
+            margin-left:20px;
+            margin-top:10px;
+        }
+
+        li{
+            margin:6px 0;
+        }
+
+        .project{
+            margin-top:15px;
+            background:#eef7ff;
+            padding:10px;
+            border-left:5px solid #0066cc;
+        }
+
+        footer{
+            text-align:center;
+            margin-top:30px;
+            color:gray;
+        }
+        .task-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.hours{
+    width:70px;
+    padding:4px;
+}
+
+.completed{
+    text-decoration:line-through;
+    color:gray;
+}
+
+.stats{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+progress{
+    width:100%;
+    height:25px;
+    margin-top:10px;
+}
+    </style>
+</head>
+<body>
+
+    <h1>🚀 Lộ Trình Fullstack Java Trong 6 Tháng</h1>
+
+    <div class="container">
+
+        <div class="month">
+            <h2>📅 Tháng 1 - 2: Java Backend Foundation</h2>
+
+            <ul>
+                <li>Java Core</li>
+                <li>OOP</li>
+                <li>Collections</li>
+                <li>Exception Handling</li>
+                <li>File I/O</li>
+                <li>SQL</li>
+                <li>JDBC</li>
+            </ul>
+
+            <div class="project">
+                <strong>Project:</strong> Hệ thống quản lý sinh viên
+            </div>
+        </div>
+
+        <div class="month">
+            <h2>📅 Tháng 3: Frontend Foundation</h2>
+
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Flexbox</li>
+                <li>Grid</li>
+                <li>Responsive Design</li>
+                <li>JavaScript cơ bản</li>
+                <li>DOM & Event</li>
+            </ul>
+
+            <div class="project">
+                <strong>Project:</strong> Portfolio Website hoặc Todo List
+            </div>
+        </div>
+
+        <div class="month">
+            <h2>📅 Tháng 4: Java Web & Spring Boot</h2>
+
+            <ul>
+                <li>HTTP</li>
+                <li>Client - Server</li>
+                <li>REST API</li>
+                <li>JSON</li>
+                <li>Spring Boot</li>
+                <li>Controller</li>
+                <li>Service</li>
+                <li>Repository</li>
+            </ul>
+
+            <div class="project">
+                <strong>Project:</strong> Student Management API
+            </div>
+        </div>
+
+        <div class="month">
+            <h2>📅 Tháng 5: React</h2>
+
+            <ul>
+                <li>React Component</li>
+                <li>Props</li>
+                <li>State</li>
+                <li>useState</li>
+                <li>useEffect</li>
+                <li>React Router</li>
+                <li>Fetch API</li>
+            </ul>
+
+            <div class="project">
+                <strong>Project:</strong> Student Management Frontend
+            </div>
+        </div>
+
+        <div class="month">
+            <h2>📅 Tháng 6: Fullstack Project</h2>
+
+            <ul>
+                <li>React + Spring Boot</li>
+                <li>MySQL</li>
+                <li>CRUD</li>
+                <li>Authentication cơ bản</li>
+                <li>Triển khai dự án hoàn chỉnh</li>
+            </ul>
+
+            <div class="project">
+                <strong>Project:</strong> Library Management System
+            </div>
+        </div>
+
+        <div class="month">
+            <h2>🎯 Mục Tiêu Sau 6 Tháng</h2>
+
+            <ul>
+                <li>Hiểu Frontend và Backend</li>
+                <li>Biết React cơ bản</li>
+                <li>Biết Spring Boot cơ bản</li>
+                <li>Làm được web CRUD hoàn chỉnh</li>
+                <li>Có Portfolio trên GitHub</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="stats">
+    <h2>📊 Tiến Độ Học Tập</h2>
+
+    <p>
+        Hoàn thành:
+        <span id="skillPercent">0%</span>
+    </p>
+
+    <progress
+        id="skillProgress"
+        value="0"
+        max="100">
+    </progress>
+
+    <br><br>
+
+    <p>
+        Tổng giờ học:
+        <span id="totalHours">0</span>
+        giờ
+    </p>
+</div>
+
+    <footer>
+        Fullstack Java Roadmap - 2026
+    </footer>
+
+    <script>
+
+const allLi = document.querySelectorAll("ul li");
+
+allLi.forEach((li,index)=>{
+
+    const text = li.textContent;
+
+    li.innerHTML = `
+        <div class="task-row">
+
+            <label>
+                <input
+                    type="checkbox"
+                    class="task"
+                    data-index="${index}">
+                <span>${text}</span>
+            </label>
+
+            <input
+                type="number"
+                class="hours"
+                data-index="${index}"
+                min="0"
+                value="0">
+
+        </div>
+    `;
+});
+
+const tasks =
+    document.querySelectorAll(".task");
+
+const hours =
+    document.querySelectorAll(".hours");
+
+function updateSkillProgress(){
+
+    const total =
+        tasks.length;
+
+    const done =
+        [...tasks].filter(
+            t => t.checked
+        ).length;
+
+    const percent =
+        Math.round(
+            done / total * 100
+        );
+
+    document.getElementById(
+        "skillPercent"
+    ).textContent =
+        percent + "%";
+
+    document.getElementById(
+        "skillProgress"
+    ).value =
+        percent;
+}
+
+function updateHours(){
+
+    let total = 0;
+
+    hours.forEach((input,index)=>{
+
+        total +=
+            Number(input.value);
+
+        localStorage.setItem(
+            "hour_" + index,
+            input.value
+        );
+
+    });
+
+    document.getElementById(
+        "totalHours"
+    ).textContent =
+        total;
+}
+
+tasks.forEach((task,index)=>{
+
+    const saved =
+        localStorage.getItem(
+            "task_" + index
+        );
+
+    if(saved === "true"){
+
+        task.checked = true;
+
+        task.parentElement
+            .querySelector("span")
+            .classList.add(
+                "completed"
+            );
+    }
+
+    task.addEventListener(
+        "change",
+        ()=>{
+
+            localStorage.setItem(
+                "task_" + index,
+                task.checked
+            );
+
+            const text =
+                task.parentElement
+                    .querySelector("span");
+
+            if(task.checked){
+
+                text.classList.add(
+                    "completed"
+                );
+
+            }else{
+
+                text.classList.remove(
+                    "completed"
+                );
+            }
+
+            updateSkillProgress();
+        }
+    );
+
+});
+
+hours.forEach((input,index)=>{
+
+    const saved =
+        localStorage.getItem(
+            "hour_" + index
+        );
+
+    if(saved){
+
+        input.value = saved;
+    }
+
+    input.addEventListener(
+        "input",
+        updateHours
+    );
+
+});
+
+updateSkillProgress();
+updateHours();
+
+</script>
+</body>
+</html>
